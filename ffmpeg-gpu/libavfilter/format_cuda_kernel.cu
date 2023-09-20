@@ -551,7 +551,7 @@ __global__ static void RgbpToYuvKernel(uint8_t *pRgb, int nRgbPitch, uint8_t *pY
     };
     *(YuvUnitx2 *)(pDst + nYuvPitch) = YuvUnitx2 {
         RgbToY<decltype(YuvUnitx2::x)>(int2bR.x, int2bG.x, int2bB.x),
-        RgbToY<decltype(YuvUnitx2::x)>(int2bR.y, int2bG.y, int2bG.y),
+        RgbToY<decltype(YuvUnitx2::x)>(int2bR.y, int2bG.y, int2bB.y),
     };
     *(YuvUnitx2 *)(pDst + (nHeight - y / 2) * nYuvPitch) = YuvUnitx2 {
         RgbToU<decltype(YuvUnitx2::x)>(r, g, b),
